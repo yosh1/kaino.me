@@ -29,6 +29,13 @@ const articles: Article[] = [
   {
     date: "2025-07-18",
     title:
+      "営業の未来図 2025 - 売れる組織はAIをこう使う - 成功事例と実装の裏側 に登壇しました",
+    source: "NEUROHUB（DXHR Inc.）",
+    url: "https://dxhr.inc/neurohub/event/20250718",
+  },
+  {
+    date: "2025-07-18",
+    title:
       "「AI活用全盛のいま、現役エンジニアによるAI開発案件参画のリアル、具体像」に登壇しました",
     source: "NEUROHUB（DXHR Inc.）",
     url: "https://dxhr.inc/neurohub/event/250731",
