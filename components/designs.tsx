@@ -11,10 +11,19 @@ export default function Designs() {
       id: 1,
       name: "Slow Rush Coffee",
       year: "2023 - Current",
-      description: "Made a cafe in Kamakura, Japan",
+      description: "Made a cafe in Kamakura, Japan (Preferred Inc.)",
       image: "https://www.slowrush.jp/ogp.png",
       tags: ["Development", "Cafe"],
       link: "https://www.slowrush.jp/",
+    },
+    {
+      id: 2,
+      name: "Miyabi Estate",
+      year: "2025 - Current",
+      description: "Designed a real estate works in Tokyo, Japan (Preferred Inc.)",
+      image: "https://www.miyabifudosan.com/hero.jpeg",
+      tags: ["Development", "Estate"],
+      link: "https://www.miyabifudosan.com/",
     },
   ];
 

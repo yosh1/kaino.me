@@ -12,7 +12,7 @@ export default function Investments() {
       name: "newCreator Inc.",
       year: "2023",
       description: "Invested in newCreator Inc., a STEAM education startup",
-      image: "https://newcreator.jp//ogp.png",
+      image: "/img/newcreator-jp.svg",
       tags: ["Education", "STEM", "AI"],
     },
     {
@@ -22,6 +22,14 @@ export default function Investments() {
       description: "Invested in US education startups",
       image: "/placeholder.svg?height=200&width=300",
       tags: ["Education", "STEM", "AI"],
+    },
+    {
+      id: 3,
+      name: "Preferred Agency Inc.",
+      year: "2024",
+      description: "Invested in Preferred Agency Inc., AI startup",
+      image: "/placeholder.svg?height=200&width=300",
+      tags: ["AI", "Advertising"],
     },
   ];
 
