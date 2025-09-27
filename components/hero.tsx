@@ -1,67 +1,61 @@
+"use client"
+
 import Link from "next/link"
+import Image from "next/image"
 import { Instagram, X, Linkedin, Github } from "lucide-react"
 import { differenceInYears } from 'date-fns';
+import { useI18n } from "./i18n-provider"
 
 export default function Hero() {
   const age = differenceInYears(new Date(), new Date('2001-11-25'));
+  const { t } = useI18n()
 
   return (
     <section className='pt-32 pb-20 md:pt-40 md:pb-32 px-4'>
       <div className='container max-w-7xl mx-auto'>
-        <div className='grid grid-cols-1 gap-12'>
-          <div className='space-y-6'>
+        <div className='grid grid-cols-1 md:grid-cols-2 items-center gap-12'>
+          <div className='space-y-6 order-2 md:order-1'>
             <h1 className='text-5xl md:text-7xl font-bold tracking-tight'>
-              Yoshihisa Kaino
-              {/* ｜改野 由尚 */}
+              {t("hero.title")}
             </h1>
 
             <div className='flex space-x-4'>
               <Link
                 href='https://x.com/yoshi1125hisa'
-                className='text-white/70 hover:text-white transition-colors'>
+                className='text-foreground/70 hover:text-foreground transition-colors'>
                 <X className='h-6 w-6' />
                 <span className='sr-only'>X (Twitter)</span>
               </Link>
               <Link
                 href='https://www.instagram.com/yoshihisa.kaino/'
-                className='text-white/70 hover:text-white transition-colors'>
+                className='text-foreground/70 hover:text-foreground transition-colors'>
                 <Instagram className='h-6 w-6' />
                 <span className='sr-only'>Instagram</span>
               </Link>
               <Link
                 href='https://www.linkedin.com/in/yoshihisa.k'
-                className='text-white/70 hover:text-white transition-colors'>
+                className='text-foreground/70 hover:text-foreground transition-colors'>
                 <Linkedin className='h-6 w-6' />
                 <span className='sr-only'>LinkedIn</span>
               </Link>
               <Link
                 href='https://github.com/yosh1'
-                className='text-white/70 hover:text-white transition-colors'>
+                className='text-foreground/70 hover:text-foreground transition-colors'>
                 <Github className='h-6 w-6' />
                 <span className='sr-only'>GitHub</span>
               </Link>
             </div>
 
-            <p className="text-white/70 text-xl md:text-2xl leading-relaxed font-bold">
-              CEO, XTEM Inc.
+            <p className="text-foreground/70 text-xl md:text-2xl leading-relaxed font-bold">
+              {t("hero.roles.0")}
               <br />
-              CEO, Preferred Inc.
+              {t("hero.roles.1")}
               <br />
-              Chairman, newCreator.org
+              {t("hero.roles.2")}
             </p>
 
-            <div className='max-w-3xl space-y-4 text-white/80 text-lg md:text-xl leading-relaxed'>
-              <p>
-                Studied programming, entrepreneurship, and business management at N High School, KADOKAWA DWANGO Educational Institute, where he was a member of the entrepreneurship club and received the Active Learner certification.
-                <br />
-                Subsequently enrolled in the Faculty of Environment and Information Studies at Keio University, joining the Masui Laboratory (Global User Interface Design).
-                <br />
-                Conducted research on new forms of user interfaces based on the belief that expanding human potential through computers requires user interfaces that can be controlled as intended.
-                <br />
-                <br />
-                Since April 2018, he has been working as a freelancer in web engineering, UX/UI design, IT business process engineering, and IT implementation support (DX). Later, with business expansion, he incorporated Preferred Inc. As a life work, he focuses on STEAM education for children, promoting generative AI, and addressing educational disparities through visiting classes at middle and high schools nationwide, teacher training, and system development. In 2019, he established newCreator.org.
-                In November 2024, he founded XTEM Inc. with the aim of promoting "AI-Driven Development" and AI agent training to create a world where AI becomes commonplace, leveraging his experience in education and system development.
-              </p>
+            <div className='max-w-3xl space-y-4 text-foreground/80 text-lg md:text-xl leading-relaxed'>
+              <p className="whitespace-pre-line">{t("hero.bio")}</p>
             </div>
 
             {/* <hr className="border-white/10" />
@@ -90,9 +84,20 @@ export default function Hero() {
               </p>
             </div> */}
           </div>
+          <div className='order-1 md:order-2'>
+            <div className='max-w-md md:max-w-lg mx-auto'>
+              <Image
+                src="/img/board.jpg"
+                alt="改野由尚の写真"
+                width={800}
+                height={800}
+                priority
+                className='w-full h-auto rounded-2xl shadow-lg object-cover'
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
-
