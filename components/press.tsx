@@ -20,6 +20,13 @@ const articles: Article[] = [
     url: "https://www.hsakuragaoka-h.ed.jp/News/detail/FNkLRUCQ",
   },
   {
+    date: "2025-07-23",
+    title:
+      "【会場参加あり】Difyで加速するAXの最前線 〜トップランナーが語るAI開発・導入・キャリア戦略〜 に登壇しました",
+    source: "Peatix",
+    url: "https://peatix.com/event/4489003/view",
+  },
+  {
     date: "2025-07-18",
     title:
       "「AI活用全盛のいま、現役エンジニアによるAI開発案件参画のリアル、具体像」に登壇しました",
