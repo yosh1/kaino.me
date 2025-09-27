@@ -25,12 +25,18 @@ export default function CardItem({
   return (
     <Link href={href} className='group block' {...linkProps}>
       <div className='relative aspect-[3/2] w-full overflow-hidden mb-4'>
-        <Image
-          src={image || "/placeholder.svg"}
-          alt={title}
-          fill
-          className='object-contain object-center transition-transform duration-500 group-hover:scale-105 p-6'
-        />
+        {image ? (
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className='object-contain object-center transition-transform duration-500 group-hover:scale-105 p-6 bg-white rounded-lg'
+          />
+        ) : (
+          <div className='w-full h-full bg-gray-100 rounded-lg flex items-center justify-center relative overflow-hidden'>
+            <div className='absolute inset-0 bg-gradient-to-br from-transparent via-gray-300 to-transparent transform rotate-45 w-[200%] h-[1px] top-1/2 left-[-50%]'></div>
+          </div>
+        )}
       </div>
 
       {tags?.length ? (
