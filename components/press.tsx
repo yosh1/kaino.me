@@ -98,6 +98,12 @@ const articles: Article[] = [
     url: "https://u18.awards.cesa.or.jp/guidline2019/2019final/",
   },
   {
+    date: "2019-02-18",
+    title: "N高起業部、特別審査会の選考を終え、第二期メンバーが決定",
+    source: "N高等学校",
+    url: "https://nnn.ed.jp/news/7147/",
+  },
+  {
     date: "2019-01-04",
     title:
       "Heisei Transformations: Education shifting online, giving kids more options",
