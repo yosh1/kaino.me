@@ -61,10 +61,37 @@ export default function Companies() {
       tags: ["Startups", "AI"],
       current: true,
     },
+    {
+      id: 7,
+      name: "SUPOTA Inc.",
+      year: "2019",
+      description: "CTO",
+      image: "/img/supota.png",
+      tags: ["Startups", "Sports", "Blockchain"],
+      current: false,
+    },
   ];
 
-  const currentCompanies = companies.filter(company => company.current);
-  const pastCompanies = companies.filter(company => !company.current);
+  // 年度から開始年を抽出する関数
+  const getStartYear = (yearString: string): number => {
+    const match = yearString.match(/(\d{4})/);
+    return match ? parseInt(match[1]) : 0;
+  };
+
+  // 時系列順にソートする関数
+  const sortByYear = (a: typeof companies[0], b: typeof companies[0]): number => {
+    const yearA = getStartYear(a.year);
+    const yearB = getStartYear(b.year);
+    return yearB - yearA; // 新しい順（降順）
+  };
+
+  const currentCompanies = companies
+    .filter(company => company.current)
+    .sort(sortByYear);
+  
+  const pastCompanies = companies
+    .filter(company => !company.current)
+    .sort(sortByYear);
 
   const CompanyCard = ({ item }: { item: typeof companies[0] }) => (
     <CardItem
