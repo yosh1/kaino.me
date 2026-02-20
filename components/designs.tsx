@@ -31,6 +31,18 @@ export default function Designs() {
       tags: { en: ["Development", "Estate"], ja: ["事業開発", "不動産"] },
       link: "https://www.miyabifudosan.com/",
     },
+    {
+      id: 3,
+      name: { en: "LC COFFEE", ja: "LC COFFEE" },
+      year: { en: "2025 - Current", ja: "2025 - 現在" },
+      description: {
+        en: "Collaboration EC with Luxury Card (Preferred Inc.)",
+        ja: "ラグジュアリーカードとのコラボレーションEC（株式会社プリファード）",
+      },
+      image: "https://www.pref.co.jp/img/lc-coffee.png",
+      tags: { en: ["Development", "EC"], ja: ["事業開発", "EC"] },
+      link: "https://slowrush.jp/store/lc-coffee",
+    },
   ];
 
   return (
