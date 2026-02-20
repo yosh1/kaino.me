@@ -47,7 +47,7 @@ export default function Companies() {
       id: 5,
       name: { en: "newCreator Inc.", ja: "株式会社ニュークリエイター" },
       year: { en: "2023 - 2024", ja: "2023 - 2024" },
-      description: { en: "Founder, CEO", ja: "創業者・代表取締役" },
+      description: { en: "Founder, CTO", ja: "創業者・CTO" },
       image: "/img/newcreator-jp.svg",
       tags: { en: ["Startups", "AI", "Education"], ja: ["スタートアップ", "AI", "教育"] },
       current: false,
@@ -78,6 +78,15 @@ export default function Companies() {
       image: "/img/supota.png",
       tags: { en: ["Startups", "Sports", "Blockchain"], ja: ["スタートアップ", "スポーツ", "ブロックチェーン"] },
       current: false,
+    },
+    {
+      id: 9,
+      name: { en: "Preferred Agency Inc.", ja: "株式会社プリファードエージェンシー" },
+      year: { en: "2024 - current", ja: "2024 - 現在" },
+      description: { en: "CTO", ja: "CTO" },
+      image: "/placeholder.svg?height=200&width=300",
+      tags: { en: ["AI", "Advertising"], ja: ["AI", "広告"] },
+      current: true,
     },
   ];
 
