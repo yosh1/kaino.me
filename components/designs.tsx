@@ -5,24 +5,30 @@ import CardItem from "@/components/ui/card-item";
 import { useI18n } from "./i18n-provider";
 
 export default function Designs() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const designs = [
     {
       id: 1,
-      name: "Slow Rush Coffee",
-      year: "2023 - Current",
-      description: "Made a cafe in Kamakura, Japan (Preferred Inc.)",
+      name: { en: "Slow Rush Coffee", ja: "Slow Rush Coffee" },
+      year: { en: "2023 - Current", ja: "2023 - 現在" },
+      description: {
+        en: "Made a cafe in Kamakura, Japan (Preferred Inc.)",
+        ja: "鎌倉にカフェを立ち上げ（株式会社プリファード）",
+      },
       image: "https://www.slowrush.jp/ogp.png",
-      tags: ["Development", "Cafe"],
+      tags: { en: ["Development", "Cafe"], ja: ["事業開発", "カフェ"] },
       link: "https://www.slowrush.jp/",
     },
     {
       id: 2,
-      name: "Miyabi Estate",
-      year: "2025 - Current",
-      description: "Designed a real estate works in Tokyo, Japan (Preferred Inc.)",
+      name: { en: "Miyabi Estate", ja: "みやび不動産" },
+      year: { en: "2025 - Current", ja: "2025 - 現在" },
+      description: {
+        en: "Designed a real estate works in Tokyo, Japan (Preferred Inc.)",
+        ja: "東京で不動産事業を立ち上げ（株式会社プリファード）",
+      },
       image: "https://www.miyabifudosan.com/hero.jpeg",
-      tags: ["Development", "Estate"],
+      tags: { en: ["Development", "Estate"], ja: ["事業開発", "不動産"] },
       link: "https://www.miyabifudosan.com/",
     },
   ];
@@ -37,10 +43,10 @@ export default function Designs() {
             key={item.id}
             href={item.link}
             image={item.image}
-            title={item.name}
-            subtitle={item.year}
-            description={item.description}
-            tags={item.tags}
+            title={item.name[locale]}
+            subtitle={item.year[locale]}
+            description={item.description[locale]}
+            tags={item.tags[locale]}
             external
           />
         ))}
