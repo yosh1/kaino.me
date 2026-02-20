@@ -39,7 +39,7 @@ export default function Designs() {
         en: "Collaboration EC with Luxury Card (Preferred Inc.)",
         ja: "ラグジュアリーカードとのコラボレーションEC（株式会社プリファード）",
       },
-      image: "https://www.pref.co.jp/img/lc-coffee.png",
+      image: "/img/lc-coffee.png",
       tags: { en: ["Development", "EC"], ja: ["事業開発", "EC"] },
       link: "https://slowrush.jp/store/lc-coffee",
     },
