@@ -5,78 +5,78 @@ import CardItem from "@/components/ui/card-item";
 import { useI18n } from "./i18n-provider";
 
 export default function Companies() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const companies = [
     {
       id: 1,
-      name: "SKYWARD Inc.",
-      year: "2018",
-      description: "CTO",
+      name: { en: "SKYWARD Inc.", ja: "株式会社SKYWARD" },
+      year: { en: "2018", ja: "2018" },
+      description: { en: "CTO", ja: "CTO" },
       image: "/img/skyward.png",
-      tags: ["Startups", "AI"],
+      tags: { en: ["Startups", "AI"], ja: ["スタートアップ", "AI"] },
       current: false,
     },
     {
       id: 2,
-      name: "Bae8 Inc.",
-      year: "2018 - 2019",
-      description: "CTO",
+      name: { en: "Bae8 Inc.", ja: "株式会社Bae8" },
+      year: { en: "2018 - 2019", ja: "2018 - 2019" },
+      description: { en: "CTO", ja: "CTO" },
       image: "/img/bae8.png",
-      tags: ["Startups", "Web3"],
+      tags: { en: ["Startups", "Web3"], ja: ["スタートアップ", "Web3"] },
       current: false,
     },
     {
       id: 3,
-      name: "newCreator.org",
-      year: "2019 - current",
-      description: "Founder, Chairman",
+      name: { en: "newCreator.org", ja: "特定非営利活動法人ニュークリエイターオルグ" },
+      year: { en: "2019 - current", ja: "2019 - 現在" },
+      description: { en: "Founder, Chairman", ja: "創業者・理事長" },
       image: "/img/newcreator-org.svg",
-      tags: ["NPO", "Education"],
+      tags: { en: ["NPO", "Education"], ja: ["NPO", "教育"] },
       current: true,
     },
     {
       id: 4,
-      name: "Preferred Inc.",
-      year: "2022 - current",
-      description: "Founder, CEO",
+      name: { en: "Preferred Inc.", ja: "株式会社プリファード" },
+      year: { en: "2022 - current", ja: "2022 - 現在" },
+      description: { en: "Founder, CEO", ja: "創業者・代表取締役" },
       image: "/img/pref.svg",
-      tags: ["Venture", "Parallel"],
+      tags: { en: ["Venture", "Parallel"], ja: ["ベンチャー", "パラレル"] },
       current: true,
     },
     {
       id: 5,
-      name: "newCreator Inc.",
-      year: "2023 - 2024",
-      description: "Founder, CEO",
+      name: { en: "newCreator Inc.", ja: "株式会社ニュークリエイター" },
+      year: { en: "2023 - 2024", ja: "2023 - 2024" },
+      description: { en: "Founder, CEO", ja: "創業者・代表取締役" },
       image: "/img/newcreator-jp.svg",
-      tags: ["Startups", "AI", "Education"],
+      tags: { en: ["Startups", "AI", "Education"], ja: ["スタートアップ", "AI", "教育"] },
       current: false,
     },
     {
       id: 6,
-      name: "XTEM Inc.",
-      year: "2024 - 2025",
-      description: "Founder, CEO（Exited）",
+      name: { en: "XTEM Inc.", ja: "エクステム株式会社" },
+      year: { en: "2024 - 2025", ja: "2024 - 2025" },
+      description: { en: "Founder, CEO (Exited)", ja: "創業者・代表取締役（EXIT済）" },
       image: "/img/xtem.png",
-      tags: ["Startups", "AI"],
+      tags: { en: ["Startups", "AI"], ja: ["スタートアップ", "AI"] },
       current: false,
     },
     {
       id: 8,
-      name: "AIO Research Institute Inc.",
-      year: "2025 - current",
-      description: "Founder, CEO",
+      name: { en: "AIO Research Institute Inc.", ja: "AIO総研株式会社" },
+      year: { en: "2025 - current", ja: "2025 - 現在" },
+      description: { en: "Founder, CEO", ja: "創業者・代表取締役" },
       image: "/img/aio.png",
-      tags: ["AI", "Research"],
+      tags: { en: ["AI", "Research"], ja: ["AI", "研究"] },
       current: true,
     },
     {
       id: 7,
-      name: "SUPOTA Inc.",
-      year: "2019",
-      description: "CTO",
+      name: { en: "SUPOTA Inc.", ja: "株式会社SUPOTA" },
+      year: { en: "2019", ja: "2019" },
+      description: { en: "CTO", ja: "CTO" },
       image: "/img/supota.png",
-      tags: ["Startups", "Sports", "Blockchain"],
+      tags: { en: ["Startups", "Sports", "Blockchain"], ja: ["スタートアップ", "スポーツ", "ブロックチェーン"] },
       current: false,
     },
   ];
@@ -89,8 +89,8 @@ export default function Companies() {
 
   // 時系列順にソートする関数
   const sortByYear = (a: typeof companies[0], b: typeof companies[0]): number => {
-    const yearA = getStartYear(a.year);
-    const yearB = getStartYear(b.year);
+    const yearA = getStartYear(a.year.en);
+    const yearB = getStartYear(b.year.en);
     return yearB - yearA; // 新しい順（降順）
   };
 
@@ -106,10 +106,10 @@ export default function Companies() {
     <CardItem
       href="#"
       image={item.image}
-      title={item.name}
-      subtitle={item.year}
-      description={item.description}
-      tags={item.tags}
+      title={item.name[locale]}
+      subtitle={item.year[locale]}
+      description={item.description[locale]}
+      tags={item.tags[locale]}
     />
   );
 
