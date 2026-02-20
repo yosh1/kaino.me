@@ -55,10 +55,19 @@ export default function Companies() {
     {
       id: 6,
       name: "XTEM Inc.",
-      year: "2024 - current",
-      description: "Founder, CEO",
+      year: "2024 - 2025",
+      description: "Founder, CEO（Exited）",
       image: "/img/xtem.png",
       tags: ["Startups", "AI"],
+      current: false,
+    },
+    {
+      id: 8,
+      name: "AIO Research Institute Inc.",
+      year: "2025 - current",
+      description: "Founder, CEO",
+      image: "/img/aio.png",
+      tags: ["AI", "Research"],
       current: true,
     },
     {

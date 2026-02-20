@@ -9,6 +9,7 @@ type Article = {
   title: string;
   source: string;
   url: string;
+  image?: string;
 };
 
 const articles: Article[] = [
@@ -48,6 +49,14 @@ const articles: Article[] = [
     url: "https://dxhr.inc/neurohub/event/250731",
   },
   {
+    date: "2025-01-01",
+    title:
+      "月刊日本教育 令和7年1月号 新春特集「日本の将来を語る」生成AIを学校で活用するポイントは",
+    source: "月刊日本教育（日本教育会）",
+    url: "https://www.jse.or.jp/",
+    image: "/img/press/gekkan-nihon-kyoiku-2025-01.jpg",
+  },
+  {
     date: "2025-01-24",
     title:
       "AI駆動開発(AI-Driven Development) 勉強会（第5回）に登壇しました ~AI エージェント駆動開発 × ATDD~",
@@ -62,24 +71,54 @@ const articles: Article[] = [
     url: "https://forest.f2ff.jp/introduction/10470?project_id=20250601",
   },
   {
+    date: "2024-06-17",
+    title: "【安全な生成AIを子どもたちに】 AI共存時代の「学び」",
+    source: "教育新聞",
+    url: "https://www.kyobun.co.jp/article/2024061704",
+  },
+  {
+    date: "2024-06-12",
+    title: "【安全な生成AIを子どもたちに】 AIは目的ではなく手段",
+    source: "教育新聞",
+    url: "https://www.kyobun.co.jp/article/2024061207",
+  },
+  {
     date: "2024-06-10",
     title: "【安全な生成AIを子どもたちに】 学校が導入をためらう理由",
     source: "教育新聞",
     url: "https://www.kyobun.co.jp/article/2024061004",
   },
   {
+    date: "2024-06-01",
+    title:
+      "月刊日本教育 令和6年6月号 私の視言「生成AIの学校での活用法」",
+    source: "月刊日本教育（日本教育会）",
+    url: "https://www.jse.or.jp/",
+    image: "/img/press/gekkan-nihon-kyoiku-2024-06.jpg",
+  },
+  {
     date: "2024-02-12",
     title:
-      "週間 教育資料 No. 1735号（2024年2月12日号） 潮流 生成AIの学校での活用ポイント",
-    source: "週間 教育資料",
+      "週刊教育資料 No.1735号（2024年2月12日号） 潮流 生成AIの学校での活用ポイント",
+    source: "週刊教育資料",
     url: "http://www.kyoiku-shiryo.co.jp/archives/2939",
+    image: "/img/press/shukan-kyoiku-shiryo-1735.jpg",
   },
   {
     date: "2024-02-05",
     title:
-      "週間 教育資料 No. 1734号（2024年2月5日号） 潮流 地域格差なく全ての子どもに学ぶ機会を",
-    source: "週間 教育資料",
+      "週刊教育資料 No.1734号（2024年2月5日号） 潮流 地域格差なく全ての子どもに学ぶ機会を",
+    source: "週刊教育資料",
     url: "http://www.kyoiku-shiryo.co.jp/archives/2936",
+    image: "/img/press/shukan-kyoiku-shiryo-1734.jpg",
+  },
+  {
+    date: "2023-11-03",
+    title:
+      "shutomo 2023年11月号「IT教育を格差なく届けたい」",
+    source: "shutomo（首都圏模試センター）",
+    url: "https://www.syutoken-mosi.co.jp/column/shutomo/",
+    image: "/img/press/shutomo-2023-11.jpg",
   },
   {
     date: "2023-10-30",
@@ -156,7 +195,7 @@ export default function Press() {
             <h3 className="text-2xl md:text-3xl font-bold tracking-tight">{year}</h3>
             <div className="mt-4 space-y-6">
               {items.map((a, i) => (
-                <ListItem key={`${year}-${i}`} href={a.url} date={a.date} title={a.title} meta={a.source} />
+                <ListItem key={`${year}-${i}`} href={a.url} date={a.date} title={a.title} meta={a.source} image={a.image} />
               ))}
             </div>
           </div>
