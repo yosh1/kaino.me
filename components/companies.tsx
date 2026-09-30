@@ -9,6 +9,11 @@ type Career = { name: L; role?: L; period: L };
 // 創業した会社・役職・講師・学歴を 1 つの経歴にまとめる（開始の新しい順）
 const careers: Career[] = [
   {
+    name: { en: "MIRABO (Qrad Inc.)", ja: "MIRABO（株式会社Qrad）" },
+    role: { en: "Lead Instructor", ja: "代表講師" },
+    period: { en: "2026.09 - current", ja: "2026.09 - 現在" },
+  },
+  {
     name: { en: "AdOps Inc.", ja: "株式会社AdOps" },
     role: { en: "Partner CTO", ja: "パートナーCTO" },
     period: { en: "2025.12 - current", ja: "2025.12 - 現在" },
