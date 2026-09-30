@@ -21,7 +21,7 @@ export default function Designs() {
     },
     {
       id: 2,
-      name: { en: "Miyabi Estate", ja: "みやび不動産" },
+      name: { en: "Preferred Estate", ja: "Preferred Estate" },
       year: { en: "2025 - Current", ja: "2025 - 現在" },
       description: {
         en: "Designed a real estate works in Tokyo, Japan (Preferred Inc.)",
