@@ -14,6 +14,13 @@ type Article = {
 
 const articles: Article[] = [
   {
+    date: "2026-07-22",
+    title:
+      "microCMS Meetup 2026「microCMSで考える、AI時代のコンテンツ運用設計」に登壇しました",
+    source: "microCMS Meetup 2026（connpass）",
+    url: "https://microcms.connpass.com/event/394654/",
+  },
+  {
     date: "2025-09-24",
     title:
       "株式会社プリファード 改野由尚氏 特別講演 ーキャリアの正解は１つじゃない～プログラミングとAIが広げる可能性～",
@@ -155,6 +162,18 @@ const articles: Article[] = [
     title: "N高起業部、特別審査会の選考を終え、第二期メンバーが決定",
     source: "N高等学校",
     url: "https://nnn.ed.jp/news/7147/",
+  },
+  {
+    date: "2019-02-01",
+    title: "【インターンシップ体験記 Vol.5】「株式会社プロシーズ」にて現場を学ぶ",
+    source: "N高等学校・S高等学校 ネットの高校ブログ",
+    url: "https://nnn.ed.jp/blog/archives/8104/",
+  },
+  {
+    date: "2019-02-01",
+    title: "株式会社プロシーズにて、エンジニアインターンシップを受け入れていただいています",
+    source: "N高等学校・S高等学校 ニュース・トピックス",
+    url: "https://nnn.ed.jp/news/blog/archives/7013/",
   },
   {
     date: "2019-01-04",
