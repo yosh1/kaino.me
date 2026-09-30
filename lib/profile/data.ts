@@ -344,6 +344,7 @@ export const person = {
   kana: "かいの よしひさ",
   email: "yoshihisa.kaino@pref.co.jp",
   image: "/img/board.jpg",
+  birthYear: "2001",
   birthPlace: { ja: "兵庫県", en: "Hyogo, Japan" },
 };
 

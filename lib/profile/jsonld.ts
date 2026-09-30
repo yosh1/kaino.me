@@ -27,6 +27,7 @@ export function buildJsonLd(locale: Locale, bio: string) {
       ...(o.url ? { url: o.url } : {}),
     })),
     alumniOf: alumniOf.map((a) => ({ "@type": "EducationalOrganization", name: a[locale], url: a.url })),
+    birthDate: person.birthYear,
     birthPlace: { "@type": "Place", name: person.birthPlace[locale] },
     nationality: { "@type": "Country", name: "Japan" },
     knowsLanguage: ["ja", "en"],
