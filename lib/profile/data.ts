@@ -337,7 +337,7 @@ export const articles: Article[] = [
 export const SITE_URL = "https://www.kaino.me";
 
 // 内容を更新したら書き換える（sitemap と構造化データの更新日に使う）
-export const LAST_UPDATED = "2026-09-30";
+export const LAST_UPDATED = "2026-10-01";
 
 export const person = {
   name: { ja: "改野 由尚", en: "Yoshihisa Kaino" },
