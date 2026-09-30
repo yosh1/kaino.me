@@ -1,6 +1,6 @@
 "use client"
 
-import { Section, SubHeading } from "@/components/ui/section"
+import { Section, Entry } from "@/components/ui/section"
 import { useI18n } from "./i18n-provider"
 
 type Position = {
@@ -34,35 +34,18 @@ const positions: Position[] = [
 export default function Positions() {
   const { t, locale } = useI18n()
 
-  const Row = ({ item }: { item: Position }) => (
-    <li className="grid grid-cols-1 gap-1 border-b border-border py-5 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-6">
-      <div className="min-w-0">
-        <p className="font-display text-xl leading-snug md:text-2xl">{item.org[locale]}</p>
-        <p className="mt-1 text-sm text-muted-foreground">{item.role[locale]}</p>
-      </div>
-      <p className="font-mono text-xs tabular-nums text-muted-foreground sm:text-right">{item.period[locale]}</p>
-    </li>
-  )
-
-  const groups = [
-    { label: t("companies.current") as string, items: positions.filter((p) => p.current) },
-    { label: t("companies.past") as string, items: positions.filter((p) => !p.current) },
-  ].filter((g) => g.items.length)
+  const sorted = [...positions.filter((p) => p.current), ...positions.filter((p) => !p.current)]
 
   return (
-    <Section id="positions" index="03" title={t("positions.title") as string}>
-      <div className="space-y-14">
-        {groups.map((g) => (
-          <div key={g.label}>
-            <SubHeading>{g.label}</SubHeading>
-            <ul className="border-t border-border">
-              {g.items.map((item) => (
-                <Row key={item.org.en} item={item} />
-              ))}
-            </ul>
-          </div>
+    <Section id="positions" title={t("positions.title") as string}>
+      <ul>
+        {sorted.map((item) => (
+          <Entry key={item.org.en} period={item.period[locale]}>
+            {item.org[locale]}
+            <span className="text-muted-foreground">　{item.role[locale]}</span>
+          </Entry>
         ))}
-      </div>
+      </ul>
     </Section>
   )
 }

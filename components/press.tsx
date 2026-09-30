@@ -1,7 +1,6 @@
 "use client"
 
-import { Section } from "@/components/ui/section";
-import ListItem from "@/components/ui/list-item";
+import { Section, Entry } from "@/components/ui/section";
 import { useI18n } from "./i18n-provider";
 
 type Article = {
@@ -9,7 +8,6 @@ type Article = {
   title: string;
   source: string;
   url: string;
-  image?: string;
 };
 
 const articles: Article[] = [
@@ -61,7 +59,6 @@ const articles: Article[] = [
       "月刊日本教育 令和7年1月号 新春特集「日本の将来を語る」生成AIを学校で活用するポイントは",
     source: "月刊日本教育（日本教育会）",
     url: "https://www.jse.or.jp/",
-    image: "/img/press/gekkan-nihon-kyoiku-2025-01.jpg",
   },
   {
     date: "2025-01-24",
@@ -101,7 +98,6 @@ const articles: Article[] = [
       "月刊日本教育 令和6年6月号 私の視言「生成AIの学校での活用法」",
     source: "月刊日本教育（日本教育会）",
     url: "https://www.jse.or.jp/",
-    image: "/img/press/gekkan-nihon-kyoiku-2024-06.jpg",
   },
   {
     date: "2024-02-12",
@@ -109,7 +105,6 @@ const articles: Article[] = [
       "週刊教育資料 No.1735号（2024年2月12日号） 潮流 生成AIの学校での活用ポイント",
     source: "週刊教育資料",
     url: "http://www.kyoiku-shiryo.co.jp/archives/2939",
-    image: "/img/press/shukan-kyoiku-shiryo-1735.jpg",
   },
   {
     date: "2024-02-05",
@@ -117,7 +112,6 @@ const articles: Article[] = [
       "週刊教育資料 No.1734号（2024年2月5日号） 潮流 地域格差なく全ての子どもに学ぶ機会を",
     source: "週刊教育資料",
     url: "http://www.kyoiku-shiryo.co.jp/archives/2936",
-    image: "/img/press/shukan-kyoiku-shiryo-1734.jpg",
   },
   {
     date: "2023-11-03",
@@ -125,7 +119,6 @@ const articles: Article[] = [
       "shutomo 2023年11月号「IT教育を格差なく届けたい」",
     source: "shutomo（首都圏模試センター）",
     url: "https://www.syutoken-mosi.co.jp/column/shutomo/",
-    image: "/img/press/shutomo-2023-11.jpg",
   },
   {
     date: "2023-10-30",
@@ -190,37 +183,46 @@ const articles: Article[] = [
   },
 ];
 
+const MONTHS_EN = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
 export default function Press() {
-  const { t } = useI18n();
-  const sorted = [...articles].sort(
-    (b, a) => new Date(a.date).getTime() - new Date(b.date).getTime()
-  );
-  const grouped: { year: string; items: Article[] }[] = [];
-  for (const a of sorted) {
-    const year = new Date(a.date).getFullYear().toString();
-    const last = grouped[grouped.length - 1];
-    if (!last || last.year !== year) {
-      grouped.push({ year, items: [a] });
-    } else {
-      last.items.push(a);
-    }
-  }
+  const { t, locale } = useI18n();
+  const sorted = [...articles].sort((a, b) => b.date.localeCompare(a.date));
+
+  // 同じ年・同じ月が続くときは表示を省き、年表のように見せる
+  let prevYear = "";
+  let prevMonth = "";
+  const rows = sorted.map((a) => {
+    const [year, month] = a.date.split("-");
+    const m = Number(month);
+    const monthLabel = locale === "ja" ? `${m}月` : MONTHS_EN[m - 1];
+    const showYear = year !== prevYear;
+    const showMonth = showYear || month !== prevMonth;
+    prevYear = year;
+    prevMonth = month;
+    return { a, year: showYear ? year : "", month: showMonth ? monthLabel : "" };
+  });
+
   return (
-    <Section id="press" index="05" title={t("press.title") as string}>
-      <div className="space-y-12">
-        {grouped.map(({ year, items }) => (
-          <div key={year} className="grid grid-cols-1 gap-4 sm:grid-cols-[5rem_1fr] sm:gap-6">
-            <h3 className="font-display text-3xl leading-none text-highlight sm:pt-5">{year}</h3>
-            <ul className="border-t border-border">
-              {items.map((a, i) => (
-                <li key={`${year}-${i}`}>
-                  <ListItem href={a.url} date={a.date} title={a.title} meta={a.source} image={a.image} />
-                </li>
-              ))}
-            </ul>
-          </div>
+    <Section id="press" title={t("press.title") as string}>
+      <ul>
+        {rows.map(({ a, year, month }, i) => (
+          <Entry
+            key={i}
+            period={
+              <span className="grid grid-cols-[3rem_1fr]">
+                <span>{year}</span>
+                <span>{month}</span>
+              </span>
+            }
+          >
+            <a href={a.url} target="_blank" rel="noopener noreferrer" className="underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground">
+              {a.title}
+            </a>
+            <span className="block text-sm text-muted-foreground">{a.source}</span>
+          </Entry>
         ))}
-      </div>
+      </ul>
     </Section>
   );
 }

@@ -19,7 +19,7 @@ export default function LangSwitcher() {
   const { locale, t } = useI18n()
 
   return (
-    <div className="flex items-center font-mono text-xs" aria-label={t("navbar.switchLabel")}>
+    <div className="flex items-center text-sm" aria-label={t("navbar.switchLabel")}>
       {locales.map((l, i) => (
         <span key={l} className="flex items-center">
           {i > 0 ? <span className="px-1.5 text-muted-foreground">/</span> : null}

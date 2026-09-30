@@ -4,12 +4,10 @@ import { I18nProvider } from '@/components/i18n-provider'
 import { getDictionary } from '@/lib/i18n/dictionaries'
 import type { Locale } from '@/lib/i18n/config'
 import { ThemeProvider } from "@/components/theme-provider"
-import { Inter, Instrument_Serif, Noto_Sans_JP, Noto_Serif_JP } from "next/font/google"
+import { Noto_Serif_JP, Source_Serif_4 } from "next/font/google"
 
-const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" })
-const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-serif", display: "swap" })
-const sansJp = Noto_Sans_JP({ weight: ["400", "500", "700"], variable: "--font-sans-jp", display: "swap", preload: false })
-const serifJp = Noto_Serif_JP({ weight: ["500", "600"], variable: "--font-serif-jp", display: "swap", preload: false })
+const serifLatin = Source_Serif_4({ subsets: ["latin"], weight: ["400", "600"], variable: "--font-serif-latin", display: "swap" })
+const serifJp = Noto_Serif_JP({ weight: ["400", "600"], variable: "--font-serif-jp", display: "swap", preload: false })
 
 export const metadata: Metadata = {
   title: '改野 由尚｜Yoshihisa Kaino',
@@ -28,7 +26,7 @@ export default async function LocaleLayout({
   const dict = await getDictionary(locale)
 
   return (
-    <html lang={locale} suppressHydrationWarning className={`${sans.variable} ${serif.variable} ${sansJp.variable} ${serifJp.variable}`}>
+    <html lang={locale} suppressHydrationWarning className={`${serifLatin.variable} ${serifJp.variable}`}>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <I18nProvider locale={locale} messages={dict}>{children}</I18nProvider>

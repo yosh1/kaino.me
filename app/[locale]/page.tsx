@@ -1,25 +1,25 @@
 import Navbar from "@/components/navbar"
 import Hero from "@/components/hero"
-import Profile from "@/components/profile"
 import Companies from "@/components/companies"
-import Designs from "@/components/designs"
 import Positions from "@/components/positions"
-import Footer from "@/components/footer"
+import Designs from "@/components/designs"
 import Press from "@/components/press"
+import Footer from "@/components/footer"
 
 export default function Home() {
   return (
-    <div className='min-h-screen'>
+    <div className="min-h-screen">
       <Navbar />
-      <main>
-        <Hero />
-        <Profile />
-        <Companies />
-        <Positions />
-        <Designs />
-        <Press />
+      <main className="px-5 pt-16 md:px-8 md:pt-20">
+        <div className="mx-auto max-w-5xl md:pl-40">
+          <Hero />
+          <Companies />
+          <Positions />
+          <Designs />
+          <Press />
+        </div>
       </main>
       <Footer />
     </div>
-  );
+  )
 }
