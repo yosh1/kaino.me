@@ -160,7 +160,6 @@ export const techs: { category: L; items: L }[] = [
 
 export const certifications: { name: L; date: string }[] = [
   { name: { en: "Salesforce Certified AI Associate", ja: "Salesforce Certified AI Associate" }, date: "2025.03" },
-  { name: { en: "Salesforce Certified Administrator", ja: "Salesforce 認定アドミニストレーター" }, date: "2023.04" },
   { name: { en: "Applied Information Technology Engineer Examination", ja: "応用情報技術者試験" }, date: "2022.12" },
   { name: { en: "Fundamental Information Technology Engineer Examination", ja: "基本情報技術者試験" }, date: "2020.04" },
   { name: { en: "Information Technology Passport Examination", ja: "ITパスポート試験" }, date: "2020.04" },
