@@ -21,32 +21,32 @@ const careers: Career[] = [
   {
     name: { en: "AIO Research Institute Inc.", ja: "AIO総研株式会社" },
     role: { en: "Founder, CEO", ja: "創業者・代表取締役" },
-    period: { en: "2025 - current", ja: "2025 - 現在" },
+    period: { en: "2025.10 - current", ja: "2025.10 - 現在" },
   },
   {
     name: { en: "XTEM Inc.", ja: "エクステム株式会社" },
     role: { en: "Founder, CEO (Exited)", ja: "創業者・代表取締役（EXIT済）" },
-    period: { en: "2024 - 2025", ja: "2024 - 2025" },
+    period: { en: "2024.10 - 2025.11", ja: "2024.10 - 2025.11" },
   },
   {
     name: { en: "Hiroshima Sakuragaoka High School (Matsumoto Gakuen)", ja: "学校法人松本学園 広島桜が丘高等学校" },
     role: { en: "Instructor, Programming Course", ja: "プログラミングコース講師" },
-    period: { en: "2024.4 - 2026.3", ja: "2024.4 - 2026.3" },
+    period: { en: "2024.04 - 2026.03", ja: "2024.04 - 2026.03" },
   },
   {
     name: { en: "newCreator Inc.", ja: "株式会社ニュークリエイター" },
     role: { en: "Founder, CTO", ja: "創業者・CTO" },
-    period: { en: "2023 - 2024", ja: "2023 - 2024" },
+    period: { en: "2023.05 - 2024.12", ja: "2023.05 - 2024.12" },
   },
   {
     name: { en: "Preferred Inc.", ja: "株式会社プリファード" },
     role: { en: "Founder, CEO", ja: "創業者・代表取締役" },
-    period: { en: "2022 - current", ja: "2022 - 現在" },
+    period: { en: "2022.11 - current", ja: "2022.11 - 現在" },
   },
   {
     name: { en: "newCreator.org", ja: "特定非営利活動法人ニュークリエイターオルグ" },
     role: { en: "Founder, Chairman", ja: "創業者・理事長" },
-    period: { en: "2019 - current", ja: "2019 - 現在" },
+    period: { en: "2019.01 - current", ja: "2019.01 - 現在" },
   },
   {
     name: { en: "Bae8 Inc.", ja: "株式会社Bae8" },
