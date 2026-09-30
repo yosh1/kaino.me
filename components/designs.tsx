@@ -27,9 +27,9 @@ export default function Designs() {
         en: "Designed a real estate works in Tokyo, Japan (Preferred Inc.)",
         ja: "東京で不動産事業を立ち上げ（株式会社プリファード）",
       },
-      image: "https://www.miyabifudosan.com/hero.jpeg",
+      image: "/img/preferred-estate.jpg",
       tags: { en: ["Development", "Estate"], ja: ["事業開発", "不動産"] },
-      link: "https://www.miyabifudosan.com/",
+      link: "https://estate.pref.co.jp/",
     },
     {
       id: 3,
