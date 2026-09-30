@@ -1,6 +1,6 @@
 "use client"
 
-import { Section, SectionHeader } from "@/components/ui/section";
+import { Section } from "@/components/ui/section";
 import ListItem from "@/components/ui/list-item";
 import { useI18n } from "./i18n-provider";
 
@@ -206,17 +206,18 @@ export default function Press() {
     }
   }
   return (
-    <Section id="press">
-      <SectionHeader title={t("press.title") as string} />
-      <div className="space-y-10">
+    <Section id="press" index="05" title={t("press.title") as string}>
+      <div className="space-y-12">
         {grouped.map(({ year, items }) => (
-          <div key={year}>
-            <h3 className="text-2xl md:text-3xl font-bold tracking-tight">{year}</h3>
-            <div className="mt-4 space-y-6">
+          <div key={year} className="grid grid-cols-1 gap-4 sm:grid-cols-[5rem_1fr] sm:gap-6">
+            <h3 className="font-display text-3xl leading-none text-highlight sm:pt-5">{year}</h3>
+            <ul className="border-t border-border">
               {items.map((a, i) => (
-                <ListItem key={`${year}-${i}`} href={a.url} date={a.date} title={a.title} meta={a.source} image={a.image} />
+                <li key={`${year}-${i}`}>
+                  <ListItem href={a.url} date={a.date} title={a.title} meta={a.source} image={a.image} />
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         ))}
       </div>

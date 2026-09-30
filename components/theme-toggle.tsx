@@ -12,21 +12,17 @@ export default function ThemeToggle() {
 
   const isDark = (resolvedTheme || theme) === "dark"
 
-  if (!mounted) return null
+  // マウント前も同じ幅を確保し、ヘッダーのガタつきを防ぐ
+  if (!mounted) return <span className="inline-block h-8 w-8" />
 
   return (
     <button
       type="button"
       aria-label="Toggle theme"
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="inline-flex items-center justify-center rounded-md border border-border px-2.5 py-1.5 text-sm transition-colors hover:bg-accent hover:text-accent-foreground"
-      >
-    {
-      /* シンプルなトグルボタン。必要に応じてUIコンポーネントへ差し替え可能 */
-    }
-      {isDark ? <Sun size={16} /> : <Moon size={16} />}
-      <span className="sr-only">テーマ切替</span>
+      className="inline-flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+    >
+      {isDark ? <Sun size={15} /> : <Moon size={15} />}
     </button>
   )
 }
-

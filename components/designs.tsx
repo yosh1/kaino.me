@@ -1,7 +1,9 @@
 "use client"
 
-import { Section, SectionHeader } from "@/components/ui/section";
-import CardItem from "@/components/ui/card-item";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { Section } from "@/components/ui/section";
 import { useI18n } from "./i18n-provider";
 
 export default function Designs() {
@@ -46,23 +48,30 @@ export default function Designs() {
   ];
 
   return (
-    <Section id="designs">
-      <SectionHeader title={t("designs.title") as string} />
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <Section id="designs" index="04" title={t("designs.title") as string}>
+      <ul className="grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2">
         {designs.map((item) => (
-          <CardItem
-            key={item.id}
-            href={item.link}
-            image={item.image}
-            title={item.name[locale]}
-            subtitle={item.year[locale]}
-            description={item.description[locale]}
-            tags={item.tags[locale]}
-            external
-          />
+          <li key={item.id}>
+            <Link href={item.link} target="_blank" rel="noopener noreferrer" className="group block">
+              <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                <Image
+                  src={item.image}
+                  alt={item.name[locale]}
+                  fill
+                  sizes="(min-width: 640px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="mt-4 flex items-baseline justify-between gap-4">
+                <h3 className="font-display text-2xl leading-snug">{item.name[locale]}</h3>
+                <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-highlight" />
+              </div>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.description[locale]}</p>
+              <p className="mt-2 font-mono text-xs text-muted-foreground">{item.year[locale]}</p>
+            </Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </Section>
   )
 }

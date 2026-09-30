@@ -1,59 +1,38 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
 import ThemeToggle from "@/components/theme-toggle"
 import { useI18n } from "./i18n-provider"
 import LangSwitcher from "./lang-switcher"
 
+const sections = ["profile", "companies", "positions", "designs", "press"] as const
+
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { t, locale } = useI18n()
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur">
-      <div className="container flex h-16 items-center justify-between px-4">
-        <Link href={`/${locale}`} className="font-mono text-xl tracking-tighter">
-          {t("navbar.brand")}
+    <header className="fixed top-0 z-50 w-full bg-background/85 px-4 backdrop-blur md:px-8">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between">
+        <Link href={`/${locale}`} className="font-display text-xl tracking-tight">
+          {t("hero.name")}
         </Link>
 
-        {/* <nav className="hidden md:flex gap-8">
-          <Link href="#investments" className="font-mono text-sm text-white/70 hover:text-white transition-colors">
-            INVESTMENTS
-          </Link>
-          <Link href="#companies" className="font-mono text-sm text-white/70 hover:text-white transition-colors">
-            COMPANIES
-          </Link>
-        </nav> */}
-
-        {/* <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-
-        {isMenuOpen && (
-          <div className="absolute top-16 left-0 right-0 bg-background border-b border-border p-4 md:hidden">
-            <nav className="flex flex-col gap-4">
+        <div className="flex items-center gap-6">
+          <nav className="hidden items-center gap-6 md:flex">
+            {sections.map((key) => (
               <Link
-                href="#investments"
-                className="font-mono text-sm text-foreground/70 hover:text-foreground transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+                key={key}
+                href={`#${key}`}
+                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
               >
-                INVESTMENTS
+                {t(`nav.${key}`)}
               </Link>
-              <Link
-                href="#companies"
-                className="font-mono text-sm text-foreground/70 hover:text-foreground transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                COMPANIES
-              </Link>
-            </nav>
+            ))}
+          </nav>
+          <div className="flex items-center gap-3">
+            <LangSwitcher />
+            <ThemeToggle />
           </div>
-        )} */}
-        <div className="flex items-center gap-3">
-          <LangSwitcher />
-          <ThemeToggle />
         </div>
       </div>
     </header>

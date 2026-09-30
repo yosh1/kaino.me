@@ -1,7 +1,7 @@
 "use client"
 
-import { Section, SectionHeader } from "@/components/ui/section";
-import CardItem from "@/components/ui/card-item";
+import Image from "next/image";
+import { Section, SubHeading } from "@/components/ui/section";
 import { useI18n } from "./i18n-provider";
 
 export default function Companies() {
@@ -93,36 +93,44 @@ export default function Companies() {
     .filter(company => !company.current)
     .sort(sortByYear);
 
-  const CompanyCard = ({ item }: { item: typeof companies[0] }) => (
-    <CardItem
-      href="#"
-      image={item.image}
-      title={item.name[locale]}
-      subtitle={item.year[locale]}
-      description={item.description[locale]}
-      tags={item.tags[locale]}
-    />
+  const CompanyRow = ({ item }: { item: typeof companies[0] }) => (
+    <li className="grid grid-cols-[4rem_1fr] items-center gap-x-4 gap-y-1 border-b border-border py-5 sm:grid-cols-[4rem_1fr_auto] md:gap-x-6">
+      <div className="relative row-span-2 h-12 w-16 overflow-hidden rounded-sm bg-white ring-1 ring-border sm:row-span-1">
+        <Image src={item.image} alt="" fill sizes="64px" className="object-contain p-1" />
+      </div>
+      <div className="min-w-0">
+        <p className="font-display text-xl leading-snug md:text-2xl">{item.name[locale]}</p>
+        <p className="mt-1 text-sm text-muted-foreground">
+          {item.description[locale]}
+          <span className="px-2 text-border">/</span>
+          {item.tags[locale].join(" · ")}
+        </p>
+      </div>
+      <p className="col-start-2 font-mono text-xs tabular-nums text-muted-foreground sm:col-start-3 sm:text-right">
+        {item.year[locale]}
+      </p>
+    </li>
   );
 
   return (
-    <Section id="companies">
-      <SectionHeader title={t("companies.title") as string} />
-
-      <div className="mb-16">
-        <h3 className="text-2xl font-bold mb-8">{t("companies.current")}</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {currentCompanies.map((item) => (
-            <CompanyCard key={item.id} item={item} />
-          ))}
+    <Section id="companies" index="02" title={t("companies.title") as string}>
+      <div className="space-y-14">
+        <div>
+          <SubHeading>{t("companies.current")}</SubHeading>
+          <ul className="border-t border-border">
+            {currentCompanies.map((item) => (
+              <CompanyRow key={item.id} item={item} />
+            ))}
+          </ul>
         </div>
-      </div>
 
-      <div>
-        <h3 className="text-2xl font-bold mb-8">{t("companies.past")}</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {pastCompanies.map((item) => (
-            <CompanyCard key={item.id} item={item} />
-          ))}
+        <div>
+          <SubHeading>{t("companies.past")}</SubHeading>
+          <ul className="border-t border-border">
+            {pastCompanies.map((item) => (
+              <CompanyRow key={item.id} item={item} />
+            ))}
+          </ul>
         </div>
       </div>
     </Section>
