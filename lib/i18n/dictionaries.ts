@@ -9,8 +9,7 @@ type Dict = {
   }
   nav: {
     profile: string
-    companies: string
-    positions: string
+    career: string
     designs: string
     press: string
   }
@@ -24,12 +23,7 @@ type Dict = {
   profile: {
     title: string
   }
-  companies: {
-    title: string
-    current: string
-    past: string
-  }
-  positions: {
+  career: {
     title: string
   }
   designs: {
@@ -53,8 +47,7 @@ const en: Dict = {
   },
   nav: {
     profile: "Profile",
-    companies: "Companies",
-    positions: "Positions",
+    career: "Career",
     designs: "Businesses",
     press: "Press",
   },
@@ -73,13 +66,8 @@ const en: Dict = {
   profile: {
     title: "Profile",
   },
-  companies: {
-    title: "Founded Companies",
-    current: "Current",
-    past: "Past",
-  },
-  positions: {
-    title: "Positions",
+  career: {
+    title: "Career",
   },
   designs: {
     title: "Businesses",
@@ -102,8 +90,7 @@ const ja: Dict = {
   },
   nav: {
     profile: "プロフィール",
-    companies: "創業",
-    positions: "役職",
+    career: "経歴",
     designs: "事業",
     press: "掲載・登壇",
   },
@@ -121,13 +108,8 @@ const ja: Dict = {
   profile: {
     title: "プロフィール",
   },
-  companies: {
-    title: "創業",
-    current: "現在",
-    past: "過去",
-  },
-  positions: {
-    title: "役職・講師",
+  career: {
+    title: "経歴",
   },
   designs: {
     title: "事業デザイン",

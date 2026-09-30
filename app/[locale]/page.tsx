@@ -1,7 +1,6 @@
 import Navbar from "@/components/navbar"
 import Hero from "@/components/hero"
 import Companies from "@/components/companies"
-import Positions from "@/components/positions"
 import Designs from "@/components/designs"
 import Press from "@/components/press"
 import Footer from "@/components/footer"
@@ -14,7 +13,6 @@ export default function Home() {
         <div className="mx-auto max-w-5xl md:pl-40">
           <Hero />
           <Companies />
-          <Positions />
           <Designs />
           <Press />
         </div>

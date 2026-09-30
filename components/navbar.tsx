@@ -4,7 +4,7 @@ import ThemeToggle from "@/components/theme-toggle"
 import { useI18n } from "./i18n-provider"
 import LangSwitcher from "./lang-switcher"
 
-const sections = ["profile", "companies", "positions", "designs", "press"] as const
+const sections = ["profile", "career", "designs", "press"] as const
 
 export default function Navbar() {
   const { t } = useI18n()
