@@ -4,9 +4,9 @@ import { Section, Entry } from "@/components/ui/section";
 import { useI18n } from "./i18n-provider";
 
 type L = { en: string; ja: string };
-type Career = { name: L; role: L; period: L };
+type Career = { name: L; role?: L; period: L };
 
-// 創業した会社と、就いている役職・講師を 1 つの経歴にまとめる
+// 創業した会社・役職・講師・学歴を 1 つの経歴にまとめる（開始の新しい順）
 const careers: Career[] = [
   {
     name: { en: "AdOps Inc.", ja: "株式会社AdOps" },
@@ -44,9 +44,19 @@ const careers: Career[] = [
     period: { en: "2022.11 - current", ja: "2022.11 - 現在" },
   },
   {
+    name: { en: "Keio University", ja: "慶應義塾大学" },
+    role: { en: "Faculty of Environment and Information Studies (Masui Lab)", ja: "環境情報学部（増井研究室）" },
+    period: { en: "2020.04 - 2024.03", ja: "2020.04 - 2024.03" },
+  },
+  {
     name: { en: "newCreator.org", ja: "特定非営利活動法人ニュークリエイターオルグ" },
     role: { en: "Founder, Chairman", ja: "創業者・理事長" },
     period: { en: "2019.01 - current", ja: "2019.01 - 現在" },
+  },
+  {
+    name: { en: "N High School (Kadokawa Dwango Gakuen)", ja: "角川ドワンゴ学園N高等学校" },
+    role: { en: "Entrepreneurship Club, Active Learner", ja: "起業部・Active Learner認定" },
+    period: { en: "2018.04 - 2020.03", ja: "2018.04 - 2020.03" },
   },
   {
     name: { en: "Bae8 Inc.", ja: "株式会社Bae8" },
@@ -57,6 +67,10 @@ const careers: Career[] = [
     name: { en: "SKYWARD Inc.", ja: "株式会社SKYWARD" },
     role: { en: "CTO", ja: "CTO" },
     period: { en: "2018", ja: "2018" },
+  },
+  {
+    name: { en: "Hyogo Prefectural Himeji Technical High School", ja: "兵庫県立姫路工業高等学校" },
+    period: { en: "2017.04 - 2018.03", ja: "2017.04 - 2018.03" },
   },
 ];
 
@@ -69,7 +83,7 @@ export default function Companies() {
         {careers.map((item) => (
           <Entry key={item.name.en} period={item.period[locale]}>
             {item.name[locale]}
-            <span className="text-muted-foreground">　{item.role[locale]}</span>
+            {item.role ? <span className="text-muted-foreground">　{item.role[locale]}</span> : null}
           </Entry>
         ))}
       </ul>
