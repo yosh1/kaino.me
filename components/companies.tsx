@@ -64,6 +64,11 @@ const careers: Career[] = [
     period: { en: "2018.05 - 2018.10", ja: "2018.05 - 2018.10" },
   },
   {
+    name: { en: "Freelance", ja: "フリーランス" },
+    role: { en: "Web / mobile development, UX/UI design, DX support", ja: "Web・モバイル開発、UX/UIデザイン、DX支援" },
+    period: { en: "2018.04 - 2022.10", ja: "2018.04 - 2022.10" },
+  },
+  {
     name: { en: "N High School (Kadokawa Dwango Gakuen)", ja: "角川ドワンゴ学園N高等学校" },
     role: { en: "Entrepreneurship Club, Active Learner", ja: "起業部・Active Learner認定" },
     period: { en: "2018.04 - 2020.03", ja: "2018.04 - 2020.03" },

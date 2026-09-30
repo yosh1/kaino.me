@@ -10,6 +10,7 @@ type Dict = {
   nav: {
     profile: string
     career: string
+    skills: string
     designs: string
     press: string
   }
@@ -28,6 +29,11 @@ type Dict = {
   }
   designs: {
     title: string
+  }
+  skills: {
+    title: string
+    areas: string
+    certifications: string
   }
   press: {
     title: string
@@ -48,6 +54,7 @@ const en: Dict = {
   nav: {
     profile: "Profile",
     career: "Career",
+    skills: "Skills",
     designs: "Businesses",
     press: "Press",
   },
@@ -75,6 +82,11 @@ const en: Dict = {
   press: {
     title: "Press, Talks, and Awards",
   },
+  skills: {
+    title: "Skills",
+    areas: "AI / AX, strategy, new business development, consulting, PdM / PM, development, marketing",
+    certifications: "Certifications",
+  },
   footer: {
     copyrightSuffix: "All rights reserved.",
     byline: "Design & Code by Yoshihisa Kaino",
@@ -91,6 +103,7 @@ const ja: Dict = {
   nav: {
     profile: "プロフィール",
     career: "経歴",
+    skills: "スキル",
     designs: "事業",
     press: "掲載・登壇",
   },
@@ -116,6 +129,11 @@ const ja: Dict = {
   },
   press: {
     title: "メディア掲載・登壇・受賞歴",
+  },
+  skills: {
+    title: "スキル・資格",
+    areas: "AI・AX／戦略・新規事業立案／コンサルティング／PdM・PM／開発／マーケティング",
+    certifications: "資格",
   },
   footer: {
     copyrightSuffix: "All rights reserved.",
