@@ -70,24 +70,6 @@ export default function Companies() {
       tags: { en: ["AI", "Research"], ja: ["AI", "研究"] },
       current: true,
     },
-    {
-      id: 7,
-      name: { en: "SUPOTA Inc.", ja: "株式会社SUPOTA" },
-      year: { en: "2019", ja: "2019" },
-      description: { en: "CTO", ja: "CTO" },
-      image: "/img/supota.png",
-      tags: { en: ["Startups", "Sports", "Blockchain"], ja: ["スタートアップ", "スポーツ", "ブロックチェーン"] },
-      current: false,
-    },
-    {
-      id: 9,
-      name: { en: "Preferred Agency Inc.", ja: "株式会社プリファードエージェンシー" },
-      year: { en: "2024 - current", ja: "2024 - 現在" },
-      description: { en: "CTO", ja: "CTO" },
-      image: "/placeholder.svg?height=200&width=300",
-      tags: { en: ["AI", "Advertising"], ja: ["AI", "広告"] },
-      current: true,
-    },
   ];
 
   // 年度から開始年を抽出する関数
