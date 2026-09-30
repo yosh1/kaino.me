@@ -5,6 +5,10 @@ import { useI18n } from "./i18n-provider"
 
 const certifications = [
   {
+    name: { en: "Salesforce Certified AI Associate", ja: "Salesforce Certified AI Associate" },
+    date: "2025.03",
+  },
+  {
     name: { en: "Applied Information Technology Engineer Examination", ja: "応用情報技術者試験" },
     date: "2022.12",
   },
