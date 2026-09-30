@@ -141,7 +141,7 @@ const ja: Dict = {
   },
 };
 
-const dictionaries: Record<Locale, Dict> = { en, ja }
+export const dictionaries: Record<Locale, Dict> = { en, ja }
 
 export type { Dict }
 

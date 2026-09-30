@@ -2,17 +2,11 @@
 
 import Image from "next/image"
 import { useI18n } from "./i18n-provider"
-
-const socials = [
-  { label: "Email", href: "mailto:yoshihisa.kaino@pref.co.jp" },
-  { label: "X", href: "https://x.com/yoshi1125hisa" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/yoshihisak/" },
-  { label: "GitHub", href: "https://github.com/yosh1" },
-]
+import { socials } from "@/lib/profile/data"
 
 export default function Hero() {
   const { t } = useI18n()
-  const roles = [t("hero.roles.0"), t("hero.roles.1"), t("hero.roles.2")] as string[]
+  const roles = t("hero.roles")
   const paragraphs = (t("hero.bio") as string).split("\n\n")
 
   return (

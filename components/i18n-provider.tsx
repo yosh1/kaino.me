@@ -35,7 +35,9 @@ export function useI18n() {
 }
 
 // Utility types to allow dot-path access with type inference
-type Path<T, P extends string = ""> = T extends object
+type Path<T, P extends string = ""> = T extends readonly unknown[]
+  ? P
+  : T extends object
   ? {
       [K in Extract<keyof T, string>]: Path<T[K], P extends "" ? K : `${P}.${K}`>
     }[Extract<keyof T, string>]

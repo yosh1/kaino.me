@@ -27,7 +27,7 @@ export function middleware(request: NextRequest) {
 
   if (!maybeLocale || !isLocale(maybeLocale)) {
     const locale = getLocaleFromHeader(request)
-    const url = new URL(`/${locale}${pathname}`, request.url)
+    const url = new URL(`/${locale}${pathname === "/" ? "" : pathname}`, request.url)
     return NextResponse.redirect(url)
   }
 }
