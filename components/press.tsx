@@ -157,18 +157,6 @@ const articles: Article[] = [
     url: "https://nnn.ed.jp/news/7147/",
   },
   {
-    date: "2019-02-01",
-    title: "【インターンシップ体験記 Vol.5】「株式会社プロシーズ」にて現場を学ぶ",
-    source: "N高等学校・S高等学校 ネットの高校ブログ",
-    url: "https://nnn.ed.jp/blog/archives/8104/",
-  },
-  {
-    date: "2019-02-01",
-    title: "株式会社プロシーズにて、エンジニアインターンシップを受け入れていただいています",
-    source: "N高等学校・S高等学校 ニュース・トピックス",
-    url: "https://nnn.ed.jp/news/blog/archives/7013/",
-  },
-  {
     date: "2019-01-04",
     title:
       "Heisei Transformations: Education shifting online, giving kids more options",

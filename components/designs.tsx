@@ -11,7 +11,7 @@ export default function Designs() {
       name: { en: "Slow Rush Coffee", ja: "Slow Rush Coffee" },
       year: { en: "2023 - Current", ja: "2023 - 現在" },
       description: {
-        en: "Made a cafe in Kamakura, Japan (Preferred Inc.)",
+        en: "Launched a cafe in Kamakura (Preferred Inc.)",
         ja: "鎌倉にカフェを立ち上げ（株式会社プリファード）",
       },
       link: "https://www.slowrush.jp/",
@@ -21,7 +21,7 @@ export default function Designs() {
       name: { en: "Preferred Estate", ja: "Preferred Estate" },
       year: { en: "2025 - Current", ja: "2025 - 現在" },
       description: {
-        en: "Designed a real estate works in Tokyo, Japan (Preferred Inc.)",
+        en: "Launched a real estate brokerage in Tokyo (Preferred Inc.)",
         ja: "東京で不動産事業を立ち上げ（株式会社プリファード）",
       },
       link: "https://estate.pref.co.jp/",
@@ -31,7 +31,7 @@ export default function Designs() {
       name: { en: "LC COFFEE", ja: "LC COFFEE" },
       year: { en: "2025 - Current", ja: "2025 - 現在" },
       description: {
-        en: "Collaboration EC with Luxury Card (Preferred Inc.)",
+        en: "E-commerce collaboration with Luxury Card (Preferred Inc.)",
         ja: "ラグジュアリーカードとのコラボレーションEC（株式会社プリファード）",
       },
       link: "https://slowrush.jp/store/lc-coffee",

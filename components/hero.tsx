@@ -4,8 +4,8 @@ import Image from "next/image"
 import { useI18n } from "./i18n-provider"
 
 const socials = [
+  { label: "Email", href: "mailto:yoshihisa.kaino@pref.co.jp" },
   { label: "X", href: "https://x.com/yoshi1125hisa" },
-  { label: "Instagram", href: "https://www.instagram.com/yoshihisa.kaino/" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/yoshihisak/" },
   { label: "GitHub", href: "https://github.com/yosh1" },
 ]
@@ -35,8 +35,7 @@ export default function Hero() {
               <li key={s.label}>
                 <a
                   href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...(s.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className="underline decoration-border underline-offset-4 transition-colors hover:text-foreground hover:decoration-foreground"
                 >
                   {s.label}
