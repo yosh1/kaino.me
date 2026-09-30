@@ -54,19 +54,19 @@ const careers: Career[] = [
     period: { en: "2019.01 - current", ja: "2019.01 - 現在" },
   },
   {
-    name: { en: "N High School (Kadokawa Dwango Gakuen)", ja: "角川ドワンゴ学園N高等学校" },
-    role: { en: "Entrepreneurship Club, Active Learner", ja: "起業部・Active Learner認定" },
-    period: { en: "2018.04 - 2020.03", ja: "2018.04 - 2020.03" },
-  },
-  {
     name: { en: "Bae8 Inc.", ja: "株式会社Bae8" },
     role: { en: "CTO", ja: "CTO" },
-    period: { en: "2018 - 2019", ja: "2018 - 2019" },
+    period: { en: "2018.09 - 2019.09", ja: "2018.09 - 2019.09" },
   },
   {
     name: { en: "SKYWARD Inc.", ja: "株式会社SKYWARD" },
     role: { en: "CTO", ja: "CTO" },
-    period: { en: "2018", ja: "2018" },
+    period: { en: "2018.05 - 2018.10", ja: "2018.05 - 2018.10" },
+  },
+  {
+    name: { en: "N High School (Kadokawa Dwango Gakuen)", ja: "角川ドワンゴ学園N高等学校" },
+    role: { en: "Entrepreneurship Club, Active Learner", ja: "起業部・Active Learner認定" },
+    period: { en: "2018.04 - 2020.03", ja: "2018.04 - 2020.03" },
   },
   {
     name: { en: "Hyogo Prefectural Himeji Technical High School", ja: "兵庫県立姫路工業高等学校" },
