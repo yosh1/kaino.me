@@ -7,6 +7,11 @@ export type Career = { name: L; role?: L; period: L };
 // 創業した会社・役職・講師・学歴を 1 つの経歴にまとめる（開始の新しい順）
 export const careers: Career[] = [
   {
+    name: { en: "Macbee Planet, Inc.", ja: "株式会社Macbee Planet" },
+    role: { en: "CAIO (Chief AI Officer)", ja: "CAIO（最高AI責任者）" },
+    period: { en: "2026.10 - current", ja: "2026.10 - 現在" },
+  },
+  {
     name: { en: "MIRABO (Qrad Inc.)", ja: "MIRABO（株式会社Qrad）" },
     role: { en: "Lead Instructor", ja: "代表講師" },
     period: { en: "2026.09 - current", ja: "2026.09 - 現在" },
@@ -174,6 +179,12 @@ export type Article = {
 };
 
 export const articles: Article[] = [
+  {
+    date: "2026-10-01",
+    title: "Macbee Planet、最高AI責任者と最高採用責任者を新設（CAIOに就任）",
+    source: "PR TIMES（株式会社Macbee Planet）",
+    url: "https://prtimes.jp/main/html/rd/p/000000198.000023647.html",
+  },
   {
     date: "2026-07-22",
     title:
@@ -368,6 +379,7 @@ export const sameAs = [
 export const currentOrganizations = [
   { name: { ja: "株式会社プリファード", en: "Preferred Inc." }, url: "https://www.pref.co.jp/", role: { ja: "代表取締役", en: "CEO" } },
   { name: { ja: "AIO総研株式会社", en: "AIO Research Institute Inc." }, url: "https://aiosoken.com/", role: { ja: "代表取締役", en: "CEO" } },
+  { name: { ja: "株式会社Macbee Planet", en: "Macbee Planet, Inc." }, url: "https://macbee-planet.com/", role: { ja: "CAIO（最高AI責任者）", en: "CAIO (Chief AI Officer)" } },
   { name: { ja: "特定非営利活動法人ニュークリエイターオルグ", en: "newCreator.org" }, url: "https://newcreator.org/", role: { ja: "理事長", en: "Chairman" } },
   { name: { ja: "株式会社AdOps", en: "AdOps Inc." }, url: "https://adops.co.jp/", role: { ja: "パートナーCTO", en: "Partner CTO" } },
   { name: { ja: "公益財団法人日本数学検定協会", en: "The Mathematics Certification Institute of Japan" }, url: "https://www.su-gaku.net/", role: { ja: "AI Officer", en: "AI Officer" } },

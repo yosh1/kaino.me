@@ -14,12 +14,12 @@ const meta = {
   ja: {
     title: "改野 由尚（かいの よしひさ）｜株式会社プリファード・AIO総研 代表取締役",
     description:
-      "改野 由尚（Yoshihisa Kaino）の公式プロフィール。株式会社プリファード 代表取締役、AIO総研株式会社 代表取締役、特定非営利活動法人ニュークリエイターオルグ 理事長。生成AI・AI駆動開発・DX支援・STEAM教育に取り組む。経歴・事業・メディア掲載・登壇歴を掲載。",
+      "改野 由尚（Yoshihisa Kaino）の公式プロフィール。株式会社プリファード 代表取締役、AIO総研株式会社 代表取締役、株式会社Macbee Planet CAIO（最高AI責任者）、特定非営利活動法人ニュークリエイターオルグ 理事長。生成AI・AI駆動開発・DX支援・STEAM教育に取り組む。経歴・事業・メディア掲載・登壇歴を掲載。",
   },
   en: {
     title: "Yoshihisa Kaino (改野 由尚) — CEO of Preferred Inc. and AIO Research Institute",
     description:
-      "Official profile of Yoshihisa Kaino, CEO of Preferred Inc. and AIO Research Institute Inc., and Chairman of the NPO newCreator.org. Working on generative AI, AI-driven development, DX and STEAM education. Career, businesses, press and talks.",
+      "Official profile of Yoshihisa Kaino, CEO of Preferred Inc. and AIO Research Institute Inc., CAIO of Macbee Planet, Inc., and Chairman of the NPO newCreator.org. Working on generative AI, AI-driven development, DX and STEAM education. Career, businesses, press and talks.",
   },
 } as const
 
